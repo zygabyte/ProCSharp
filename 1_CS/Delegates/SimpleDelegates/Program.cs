@@ -9,6 +9,10 @@ DoubleOp[] operations =
     MathOperations.Square
 };
 
+DoubleOp anotherOp = MathOperations.MultiplyHundred;
+var anotherOp3 = MathOperations.MultiplyHundred;
+DoubleOp anotherOp2 = new DoubleOp(MathOperations.MultiplyHundred);
+
 for (int i = 0; i < operations.Length; i++)
 {
     Console.WriteLine($"Using operations[{i}]:");
@@ -22,5 +26,8 @@ void ProcessAndDisplayNumber(DoubleOp action, double value)
 {
     Console.WriteLine($"Value is {value}, result of operation is {action(value)}");
 }
+
+anotherOp(2);
+anotherOp2(20);
 
 delegate double DoubleOp(double x);
